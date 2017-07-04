@@ -68,8 +68,8 @@ kramdown:
 iLotus:
   columns: 1
   begin: 2011
-  asset_url: /blog/assets/
-  asset_pic_url: "/blog/assets/pic/"
+  asset_url: /recruit/assets/
+  asset_pic_url: "/recruit/assets/pic/"
   google_analytics_key: UA-45926407-1
   highlight_color: "#065588"
 
