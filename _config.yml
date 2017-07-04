@@ -1,0 +1,115 @@
+# Where things are
+source: .
+destination: ./_site
+plugins_dir: ./_plugins
+layouts_dir: ./_layouts
+data_dir: ./_data
+includes_dir: ./_includes
+collections: null
+
+# Handling Reading
+safe: false
+include: [".htaccess"]
+exclude: []
+keep_files: [".git", ".svn"]
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Filtering Content
+show_drafts: null
+limit_posts: 0
+future: true
+unpublished: false
+
+# Plugins
+whitelist: []
+gems: ["jekyll-paginate"]
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Serving
+detach: false
+port: 4000
+host: 127.0.0.1
+baseurl: "/blog" # does not include hostname
+
+# Outputting
+permalink: date
+paginate: 8
+paginate_path: /page:num
+timezone: Asia/Shanghai
+
+quiet: false
+defaults: []
+
+# Markdown Processors
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+  syntax_highlighter_opts:
+    wrap: div
+    line_numbers: inline
+    line_number_start: 1
+    tab_width: 4
+    bold_every: 10
+    css: style
+
+#iLotus configs
+iLotus:
+  columns: 1
+  begin: 2011
+  asset_url: /blog/assets/
+  asset_pic_url: "/blog/assets/pic/"
+  google_analytics_key: UA-45926407-1
+  highlight_color: "#065588"
+
+
+#站点基础配置
+title: tsui's blog
+subTitle: ode to Doug Lea & Trustin Lee & Pieter Hintjens
+description: jekyll blog
+url: http://xmtsui.github.io/blog
+feed: feed.xml
+
+#菜单配置
+nav:
+  - text: 首页
+    url: /index.html
+    icon: icon-home
+    class: home
+  - text: 文章归档
+    url: /archives.html
+    icon: icon-reorder
+    class: none
+  - text: 友情链接
+    url: /links.html
+    icon: icon-external-link
+    class: none
+  - text: 关于我
+    url: /contact.html
+    icon: icon-envelope-alt
+    class: none
+
+page:
+  - text: 文章分类
+    url: /archives.html
+    last: true
+  - text: 友情链接
+    url: /links.html
+    last: true
+  - text: 关于我
+    url: /contact.html
+    last: false
+
+author:
+  name: tsui

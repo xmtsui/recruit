@@ -1,0 +1,69 @@
+---
+layout: default
+title:
+description: jekyll blog
+keywords: java, middleware
+---
+<section class="lotus-logo fn-clear">
+    <hgroup class="violet-site">
+        <h1><a href="{{ site.url }}" >{{ site.title }}</a></h1>
+        <h2>{{ site.subTitle }}</h2>
+    </hgroup><!-- //violet-site -->
+</section>
+<article class="lotus-article">
+{% for rpost in paginator.posts  %}
+    <h3>{{rpost.index}}<a href="{{site.baseurl}}{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }} </a></h3>
+    <p itemprop="description">{{ rpost.description }}</p>
+{% endfor %}
+
+<!-- 分页链接 -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+  {% else %}
+    <span>&laquo; Prev</span>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <em>{{ page }}</em>
+    {% elsif page == 1 %}
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+  {% else %}
+    <span>Next &raquo;</span>
+  {% endif %}
+</div>
+{% endif %}
+
+</article>
+<section class="lotus-double fn-clear">
+    <article class="article article-first">
+    <h3>最新文章</h3>
+        <ul>
+            {% for npost in site.posts limit:3 offset:1   %}
+            <li><a href="{{site.baseurl}}{{ npost.url }}" pubdate="{{ npost.date | date_to_utc | date: '%Y-%m-%d' }}" title="{{ npost.title }}" rel="bookmark">{{ npost.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </article>
+    <article class="article article-last">
+    <h3>相关页面</h3>
+    <ul>
+        <li>
+            {% for page in site.page %}
+            <a href="{{site.baseurl}}{{ page.url }}" rel="bookmark" title="{{page.text}}">{{ page.text }}</a>
+            {% if !page.last %}
+                <span class="lotus-squ">|</span>
+            {% endif %}
+            {% endfor %}
+        </li>
+    </ul>
+    </article>
+</section>
