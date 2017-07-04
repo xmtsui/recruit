@@ -75,7 +75,7 @@ iLotus:
 
 
 #站点基础配置
-title: tsui's blog
+title: ant comm's blog
 subTitle: ode to Doug Lea & Trustin Lee & Pieter Hintjens
 description: jekyll blog
 url: https://xmtsui.github.io/recruit
@@ -112,4 +112,4 @@ page:
     last: false
 
 author:
-  name: tsui
+  name: ant comm
