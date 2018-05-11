@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [蚂蚁金服中间件部门-通信中阿进件团队2018年招聘第二波(本招聘链接长期有效)]
+title: [蚂蚁金服中间件部门-通信中间件团队2018年招聘第二波(本招聘链接长期有效)]
 categories:
   - social_recruitment
 ---
